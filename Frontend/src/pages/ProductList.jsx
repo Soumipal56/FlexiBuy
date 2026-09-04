@@ -26,12 +26,34 @@ const ProductList = () => {
   if (error) return <div className="text-red-500 text-center">{error}</div>;
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-8">Latest Smartphones</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {products.map(product => (
-          <ProductCard key={product._id} product={product} />
-        ))}
+    <div className="space-y-12 animate-in fade-in duration-500">
+      {/* Hero Banner */}
+      <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] group">
+        <img 
+          src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=2000" 
+          alt="Premium Smartphones" 
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent flex flex-col justify-center px-8 md:px-16 text-white">
+          <span className="text-brand-500 font-bold tracking-wider uppercase mb-4 block">FlexiBuy Exclusive</span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">The Future is Here.</h1>
+          <p className="text-lg md:text-xl text-gray-200 max-w-xl mb-8 drop-shadow">
+            Discover our latest collection of premium smartphones with flexible, mutual-fund-backed EMI plans.
+          </p>
+          <button className="bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 px-8 rounded-full w-fit transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/30">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+
+      {/* Product Grid */}
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Featured Smartphones</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map(product => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

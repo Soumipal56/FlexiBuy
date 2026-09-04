@@ -5,7 +5,7 @@ import Product from '../models/product.model.js';
 // @access  Public
 export const getProducts = async (req, res, next) => {
   try {
-    const products = await Product.find({}, 'name slug variants.0.price variants.0.images');
+    const products = await Product.find({}, 'name slug category variants');
     res.json(products);
   } catch (error) {
     next(error);
