@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { Loader2 } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 
@@ -11,7 +11,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get('/api/products');
+        const { data } = await api.get('/api/products');
         setProducts(data);
         setLoading(false);
       } catch (err) {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/axios';
 import { useParams, Link } from 'react-router-dom';
 import { Loader2, ArrowLeft } from 'lucide-react';
 import VariantSelector from '../components/VariantSelector';
@@ -18,7 +18,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const { data } = await axios.get(`/api/products/${slug}`);
+        const { data } = await api.get(`/api/products/${slug}`);
         setProduct(data);
         setLoading(false);
       } catch (err) {
