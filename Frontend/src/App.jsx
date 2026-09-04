@@ -9,7 +9,7 @@ function App() {
       <div className="min-h-screen flex flex-col">
         <header className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <Link to="/products" className="text-2xl font-bold text-gray-900 tracking-tight">1Fi Store</Link>
+            <Link to="/products" className="text-2xl font-bold text-gray-900 tracking-tight">FlexiBuy</Link>
           </div>
         </header>
         
@@ -22,7 +22,7 @@ function App() {
         </main>
         
         <footer className="bg-gray-50 border-t py-6 text-center text-gray-500 text-sm">
-          &copy; 2026 1Fi Internship
+          &copy; 2026 FlexiBuy
         </footer>
       </div>
     </Router>
